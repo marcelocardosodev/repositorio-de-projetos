@@ -77,10 +77,8 @@ app.post("/repositories/:id/like", (request, response) => {
   if (!repository) {
     return response.status(404).json({ error: "Repository not found" });
   }
-  console.log("Antes do incrementos " + repository.likes);
 
   repository.likes = ++repository.likes;
-  console.log("Depois do incrementos " + repository.likes);
 
   return response.json(repository);
 });
